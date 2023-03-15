@@ -1,0 +1,77 @@
+$border-radius: 6px;
+$border-color: grey;
+$border: 1px solid $border-color;
+
+::ng-deep .table {
+  width: 100%;
+
+  tr {
+    text-align: left;
+    vertical-align: middle;
+    transition: 0.5s;
+    > * {
+      padding: 5px 10px;
+      color: black;
+    }
+  }
+
+  thead {
+    background-color: lightskyblue;
+  }
+
+  tbody {
+    background-color: white;
+  }
+
+  // round only the top and bottom rows, first and last cols
+  border-collapse: separate;
+  thead > :first-child > :first-child {
+    border-top-left-radius: $border-radius;
+  }
+
+  thead > :first-child > :last-child {
+    border-top-right-radius: $border-radius;
+  }
+
+  tbody > :last-child > :first-child {
+    border-bottom-left-radius: $border-radius;
+  }
+
+  tbody > :last-child > :last-child {
+    border-bottom-right-radius: $border-radius;
+  }
+
+  // apply borders to outer and between head and body
+  thead > * > * {
+    border: none;
+  }
+
+  thead > :first-child > * {
+    border-top: $border;
+  }
+
+  tbody > :last-child > * {
+    border-bottom: $border;
+  }
+
+  thead > * > :first-child,
+  tbody > * > :first-child {
+    border-left: $border;
+  }
+
+  thead > * > :last-child,
+  tbody > * > :last-child {
+    border-right: $border;
+  }
+
+  // border between head and body
+  thead > :last-child > * {
+    border-bottom: $border;
+  }
+}
+
+.highlight-on-hover {
+  tbody > tr:hover {
+    background-color: lightgrey;
+  }
+}

@@ -29,6 +29,18 @@
     </ion-toolbar>
   </ion-header>
 
+  <app-table *ngIf="events$ | async as events" [data]="events">
+    <ng-template appTableHeader>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Date</th>
+    </ng-template>
+    <ng-template [appTableRow]="events" let-data>
+      <td>{{ data.subject }}</td>
+      <td>{{ data.description }}</td>
+      <td>{{ data.date }}</td>
+    </ng-template>
+  </app-table>
   <ion-list>
     <app-event-item *ngFor="let event of events$ | async" [event]="event"></app-event-item>
   </ion-list>

@@ -1,0 +1,26 @@
+<table class="table highlight-on-hover">
+  <thead>
+    <tr>
+      <ng-container *ngTemplateOutlet="
+        header || defaultHeaderTemplate;
+        context: { $implicit: data }
+      "></ng-container>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of data">
+      <ng-container *ngTemplateOutlet="
+        rows || defaultRowTemplate;
+        context: { $implicit: row }
+      "></ng-container>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #defaultHeaderTemplate let-data>
+  <th *ngFor="let keyvalue of data[0] | keyvalue">{{ keyvalue.key }}</th>
+</ng-template>
+
+<ng-template #defaultRowTemplate let-row>
+  <td *ngFor="let keyvalue of row | keyvalue">{{ keyvalue.value }}</td>
+</ng-template>

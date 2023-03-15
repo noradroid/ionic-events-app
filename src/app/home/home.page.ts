@@ -13,6 +13,12 @@ export class HomePage {
 
   constructor(private data: DataService) { }
 
+  ngOnInit(): void {
+    this.events$.subscribe(events => {
+      console.log(events);
+    });
+  }
+
   refresh(ev: any) {
     setTimeout(() => {
       (ev as RefresherCustomEvent).detail.complete();

@@ -7,6 +7,7 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { MessageComponent } from '../message/message.component';
 import { EventItemComponent } from '../event-item/event-item.component';
+import { TableComponentModule } from '../table/table.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { EventItemComponent } from '../event-item/event-item.component';
     IonicModule,
     HomePageRoutingModule,
     MessageComponent,
-    EventItemComponent
+    EventItemComponent,
+    TableComponentModule,
   ],
   declarations: [HomePage]
 })
