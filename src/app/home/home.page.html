@@ -34,11 +34,13 @@
       <th>Name</th>
       <th>Description</th>
       <th>Date</th>
+      <th>Days from</th>
     </ng-template>
     <ng-template [appTableRow]="events" let-data>
       <td>{{ data.subject }}</td>
       <td>{{ data.description }}</td>
-      <td>{{ data.date }}</td>
+      <td>{{ data.date | fullDate }}</td>
+      <td>{{ data.date | daysFromNow }}</td>
     </ng-template>
   </app-table>
   <ion-list>

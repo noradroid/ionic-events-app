@@ -8,6 +8,8 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { MessageComponent } from '../message/message.component';
 import { EventItemComponent } from '../event-item/event-item.component';
 import { TableComponentModule } from '../table/table.component';
+import { FullDatePipe } from '../pipes/full-date.pipe';
+import { DaysFromNowPipe } from '../pipes/days-from-now.pipe';
 
 @NgModule({
   imports: [
@@ -18,6 +20,8 @@ import { TableComponentModule } from '../table/table.component';
     MessageComponent,
     EventItemComponent,
     TableComponentModule,
+    FullDatePipe,
+    DaysFromNowPipe,
   ],
   declarations: [HomePage]
 })
