@@ -3,12 +3,12 @@ import * as moment from 'moment';
 
 @Pipe({
   standalone: true,
-  name: 'fullDate'
+  name: 'dateOnly'
 })
-export class FullDatePipe implements PipeTransform {
+export class DateOnlyPipe implements PipeTransform {
 
   transform(time: Date | string): string {
-    return moment(time).format("MMMM Do YYYY, hh:mm a");
+    return moment(time).format("MMMM Do YYYY");
   }
 
 }
