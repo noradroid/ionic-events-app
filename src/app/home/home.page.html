@@ -39,7 +39,7 @@
     <ng-template [appTableRow]="events" let-data>
       <td>{{ data.subject }}</td>
       <td>{{ data.description }}</td>
-      <td>{{ data.date | fullDate }}</td>
+      <td>{{ data.date | dateOnly }}</td>
       <td>{{ data.date | daysFromNow }}</td>
     </ng-template>
   </app-table>

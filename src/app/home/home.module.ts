@@ -8,8 +8,8 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { MessageComponent } from '../message/message.component';
 import { EventItemComponent } from '../event-item/event-item.component';
 import { TableComponentModule } from '../table/table.component';
-import { FullDatePipe } from '../pipes/full-date.pipe';
 import { DaysFromNowPipe } from '../pipes/days-from-now.pipe';
+import { DateOnlyPipe } from '../pipes/date-only.pipe';
 
 @NgModule({
   imports: [
@@ -20,8 +20,8 @@ import { DaysFromNowPipe } from '../pipes/days-from-now.pipe';
     MessageComponent,
     EventItemComponent,
     TableComponentModule,
-    FullDatePipe,
     DaysFromNowPipe,
+    DateOnlyPipe,
   ],
   declarations: [HomePage]
 })
