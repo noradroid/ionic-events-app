@@ -1,0 +1,48 @@
+<ng-container *ngIf="event$ | async as event">
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button default-href="#"></ion-back-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button (click)="toggleDayDisplay()">
+          <ng-container *ngIf="event.timeFormat == Format.COUNT_DAYS; else daysFromNow">
+            {{ event.date | dayCount }}
+          </ng-container>
+          <ng-template #daysFromNow>
+            {{ event.date | daysFromNow }}
+          </ng-template>
+        </ion-button>
+      </ion-buttons>
+      <ion-title>{{ event.subject }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true" *ngIf="event">
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button default-href="#"></ion-back-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+          <ion-button (click)="toggleDayDisplay()">
+            <ng-container *ngIf="event.timeFormat == Format.COUNT_DAYS; else daysFromNow">
+              {{ event.date | dayCount }}
+            </ng-container>
+            <ng-template #daysFromNow>
+              {{ event.date | daysFromNow }}
+            </ng-template>
+          </ion-button>
+        </ion-buttons>
+        <ion-title>{{ event.subject }}</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <div class="ion-padding">
+      <p>
+        {{ event.description }}
+      </p>
+      <ion-datetime [disabled]="true" presentation="date" [value]="event.date.toISOString()"></ion-datetime>
+    </div>
+  </ion-content>
+</ng-container>

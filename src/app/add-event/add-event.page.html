@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button type="submit" form="form">Submit</ion-button>
+    </ion-buttons>
+    <ion-title>Add Event</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button default-href="#"></ion-back-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button form="form">Submit</ion-button>
+      </ion-buttons>
+      <ion-title size="large">Add Event</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form id="form" [formGroup]="form" (ngSubmit)="submit()">
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Name</ion-label>
+        <ion-input formControlName="name" placeholder="Enter event name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Description</ion-label>
+        <ion-textarea formControlName="description" placeholder="Enter event description"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Date</ion-label>
+        <ion-datetime-button datetime="datetime"></ion-datetime-button>
+      </ion-item>
+    </ion-list>
+
+    <ion-modal [keepContentsMounted]="true">
+      <ng-template>
+        <ion-datetime id="datetime" presentation="date" [showDefaultButtons]="true" formControlName="date" 
+        (ionChange)="getDate($event)"></ion-datetime>
+      </ng-template>
+    </ion-modal>
+  </form>
+</ion-content>
