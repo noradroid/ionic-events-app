@@ -10,6 +10,7 @@ import { EventItemComponent } from '../event-item/event-item.component';
 import { TableComponentModule } from '../table/table.component';
 import { DaysFromNowPipe } from '../pipes/days-from-now.pipe';
 import { DateOnlyPipe } from '../pipes/date-only.pipe';
+import { SelectComponentModule } from '../select/select.component';
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import { DateOnlyPipe } from '../pipes/date-only.pipe';
     TableComponentModule,
     DaysFromNowPipe,
     DateOnlyPipe,
+    SelectComponentModule,
   ],
   declarations: [HomePage]
 })

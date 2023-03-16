@@ -1,0 +1,3 @@
+<select class="form-select" [id]="id" [name]="id" (change)="onChange($event)">
+  <option [value]="value" *ngFor="let value of values" [selected]="value === selectedValue">{{value}}</option>
+</select>

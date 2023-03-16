@@ -35,12 +35,16 @@
       <th style="width: 50%">Description</th>
       <th>Date</th>
       <th>Days from</th>
+      <th></th>
     </ng-template>
     <ng-template [appTableRow]="events" let-data>
       <td>{{ data.subject }}</td>
       <td>{{ data.description }}</td>
       <td>{{ data.date | dateOnly }}</td>
       <td>{{ data.date | daysFromNow }}</td>
+      <td>
+        <app-select id="random" [values]="['Lemon','Pineapple','Orange','Banana','Kiwi']"></app-select>
+      </td>
     </ng-template>
   </app-table>
   <ion-list>
