@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-import { Event } from '../services/data.service';
+import { Event } from '../models/event.model';
 
 @Component({
   standalone: true,
