@@ -1,5 +1,5 @@
 {
-  "name": "ionic-app",
+  "name": "events-app",
   "integrations": {
     "capacitor": {}
   },
