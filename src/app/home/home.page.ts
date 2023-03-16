@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RefresherCustomEvent } from '@ionic/angular';
 
-import { DataService } from '../services/data.service';
+import { DataService, Event } from '../services/data.service';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +10,7 @@ import { DataService } from '../services/data.service';
 })
 export class HomePage {
   events$ = this.data.getEvents();
+  emptyEvents: Event[] = [];
 
   constructor(private data: DataService) { }
 

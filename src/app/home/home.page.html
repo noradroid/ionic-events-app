@@ -29,6 +29,20 @@
     </ion-toolbar>
   </ion-header>
 
+  <app-table [data]="emptyEvents">
+    <ng-template appTableHeader>
+      <th>Name</th>
+      <th style="width: 50%">Description</th>
+      <th>Date</th>
+      <th>Days from</th>
+    </ng-template>
+    <ng-template [appTableRow]="emptyEvents" let-data>
+      <td>{{ data.subject }}</td>
+      <td>{{ data.description }}</td>
+      <td>{{ data.date | dateOnly }}</td>
+      <td>{{ data.date | daysFromNow }}</td>
+    </ng-template>
+  </app-table>
   <app-table *ngIf="events$ | async as events" [data]="events">
     <ng-template appTableHeader>
       <th>Name</th>

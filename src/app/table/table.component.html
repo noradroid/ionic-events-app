@@ -8,17 +8,29 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let row of data">
-      <ng-container *ngTemplateOutlet="
-        rows || defaultRowTemplate;
-        context: { $implicit: row }
-      "></ng-container>
-    </tr>
+    <ng-container *ngIf="data.length > 0; else empty_rows">
+      <tr *ngFor="let row of data">
+        <ng-container *ngTemplateOutlet="
+          rows || defaultRowTemplate;
+          context: { $implicit: row }
+        "></ng-container>
+      </tr>
+    </ng-container>
+    <ng-template #empty_rows>
+      <tr>
+        <td colspan="1000">There are no records.</td>
+      </tr>
+    </ng-template>
   </tbody>
 </table>
 
 <ng-template #defaultHeaderTemplate let-data>
-  <th *ngFor="let keyvalue of data[0] | keyvalue">{{ keyvalue.key }}</th>
+  <ng-container *ngIf="data.length > 0; else empty_header">
+    <th *ngFor="let keyvalue of data[0] | keyvalue">{{ keyvalue.key }}</th>
+  </ng-container>
+  <ng-template #empty_header>
+    <th>No headers provided</th>
+  </ng-template>
 </ng-template>
 
 <ng-template #defaultRowTemplate let-row>
